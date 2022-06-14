@@ -33,7 +33,7 @@ def init():
     #model = joblib.load(model_path)
 
     #meumodelo = joblib.load( './nome_arquivo.pkl')
-    modelo_name = "****MODEL_NAME*****"
+    modelo_name = "___MODEL_NAME___"
     print(f"Nome do Modelo: {modelo_name}")
     modelo_path = './modelo/' + modelo_name + '.pkl'
     print(f"Path do Modelo: {modelo_path}")
