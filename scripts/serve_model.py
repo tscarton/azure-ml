@@ -54,13 +54,16 @@ def run(data):
     x = campos[meumodelo.independentcols]
 
     prediction = meumodelo.predict(x)
+    proba = None
     try:
       predict_proba = meumodelo.predict_proba(x)
+      proba = list(predict_proba)
     except Exception as ex:
-      predict_proba = None
+        print(ex)
+        predict_proba = None
 
     ret = json.dumps({'prediction': list(prediction),
-                      'proba': list(predict_proba),
+                      'proba': proba,
                       'author': "Tiago Bertoni Scarton"}, cls=NpEncoder)
 
     return app.response_class(response=ret, mimetype='application/json')
